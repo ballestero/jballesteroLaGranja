@@ -32,12 +32,12 @@ body{
 }
 
 
-.body-farm{
+.mainContainer{
     display: flex;
     flex-flow: row wrap;
     justify-content: left;
 }
-.componentControl, .componentAnimals{
+.animalsContainer{
     width: 20%;
     display: flex;
     flex-flow: row wrap;
@@ -45,11 +45,14 @@ body{
     padding: 2em 0;
 }
 
-.componentControl{
+.controlsContainer{
     width: 20%;
+    display: flex;
+    flex-flow: column wrap;
+    padding: 2em 0;
 }
 
-.control, .animal{
+.control, .animalCardContainer{
     width: 80%;
     min-width: 150px;
     height: 20em;
@@ -63,11 +66,11 @@ body{
     min-width: 150px;
 }
 
-.componentAnimals{
+.animalsContainer{
     width: 80%;
 }
 
-.animal{
+.animalCardContainer{
     width: 30%;
     min-width: 250px;
 }
@@ -78,13 +81,14 @@ body{
         background-image: url(../imgs/background/background3.svg), url(../imgs/background/background2m.svg), url(../imgs/background/background1m.svg);
     }
     
-    .body-farm{
+    .mainContainer{
     display: flex;
     flex-flow: column wrap;
     justify-content: left;
 }
-.componentControl{
+.controlsContainer{
     width: 100%;
+    flex-flow: row wrap;
 }
 
 .control{
@@ -93,11 +97,11 @@ body{
     height: 10em;
 }
 
-.componentAnimals{
+.animalsContainer{
     width: 100%;
 }
 
-.animal{
+.animalCardContainer{
     width: 30%;
 }
 
