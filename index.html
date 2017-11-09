@@ -15,14 +15,48 @@
     <script src="js/animal/ave/gallina.js"></script>
     <script src="js/animal/ave/pato.js"></script>
     <script src="js/animal/Vaca.js"></script>
+    <script src="js/granja.js"></script>
 </head>
 
 <body>
 
     <div class="mainContainer">
         <div class="controlsContainer">
-            <div class="farmContainer control"><h2>Granja</h2></div>
-            <div class="animalContainer control" id="animalContainer"><h2 id="animalTitle">Animal</h2></div>
+            <div class="farmContainer control">
+                <h2>Granja</h2>
+                    <div id="infoGranja">
+                        <p id="granjaDinero"></p>
+                        <p id="granjaHuevos"></p>
+                        <p id="granjaLeche"></p>
+                        <p id="granjaTocino"></p>
+                        <p id="granjaMaiz"></p>
+                        <p id="granjaAlimento"></p>
+                        <p id="granjaPasto"></p>    
+                    </div >
+                    <div class="btns">
+                        <button class="btnProduccion" type="button" id="Comprar">Comprar</button>
+                        <button class="btnProduccion" type="button" id="Vender">Vender</button>
+                    </div>
+            </div>
+            <div class="animalContainer control" id="animalContainer">
+                <h2 id="animalTitle">Información</h2>
+                <div class="infoAnimal">
+                <p id="animalEdad">Seleccione un animal</p>
+                <p id="animalAltura"></p>
+                <p id="animalPeso"></p>
+                <p id="animalCapEstomago"></p>
+                <p id="animalCapAgua"></p>
+                <p id="animalCapAlimento"></p>
+                <p id="animalCapProduccion"></p>
+                <p id="animalTipoProduccion"></p>
+                <p id="animalFelicidad"></p>
+                </div >
+                <div class="btns">
+                    <button type="button" id="producir"></button>
+                    <button type="button" id="comer"></button>
+                    <button type="button" id="beber"></button>
+                </div>
+            </div>
         </div>
         <div class="animalsContainer" id="animalsContainer">
         </div>

@@ -63,7 +63,6 @@ body{
 .control{
     width: 80%;
     min-width: 150px;
-    height: 20em;
     margin: 1em auto;
     background: rgba(255,255,255, 0.5);
     padding: 1em 0
@@ -114,6 +113,31 @@ body{
     background: url(../imgs/animals/duck.svg);
 }
 
+
+.btnProduccion{
+    width: 80%;
+    padding: 0.5em 0;
+    border-radius: 5px;
+    margin: 0.5em auto;
+    border: 1px solid gray;
+    background: rgba(255,255,255, 0.5);
+}
+
+.btnProduccion:hover{
+    background: gray;
+    color: white
+}
+
+.btnOcultar{
+    display: none;
+}
+
+.control div{
+    margin: 1em 0
+}
+
+
+
 @media (max-width: 800px) { 
     body{
         background-image: url(../imgs/background/background3.svg), url(../imgs/background/background2m.svg), url(../imgs/background/background1m.svg);
@@ -132,7 +156,6 @@ body{
 .control{
     width: 90%;
     min-width: 150px;
-    height: 10em;
 }
 
 .animalsContainer{
