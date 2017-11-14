@@ -52,7 +52,6 @@ function init() {
     pato.color = 'purple';
     pato.tipo = 'pato'
     animals.push(pato);
-//pdinero,phuevos,pleche,ptocino,pmaiz,palmacenamiento,ppasto
     var granja = new Granja('2000','200','600','60','50','3000','1')
 
     console.log(animals);
@@ -62,7 +61,18 @@ function init() {
 
     var animalContainer_title = document.getElementById('animalTitle');
     var animalsContainer = document.getElementById('animalsContainer');
-    var granjaContainer = document.getElementById('infoGranja')
+    var granjaContainer = document.getElementById('infoGranja');
+
+    var btnComprar = document.getElementById('btnComprar');
+    var btnVender = document.getElementById('btnVender');
+    var btnCerrarPopUpVentas = document.getElementById('cerrarPopUpV');
+    var btnCerrarPopUpCompras = document.getElementById('cerrarPopUpC');
+
+    var popUpVentas = document.getElementById('popUpVentas');
+    popUpVentas.classList.add('ocultarPopUp')
+
+    var popUpCompras = document.getElementById('popUpCompras');
+    popUpCompras.classList.add('ocultarPopUp')
 
 
 
@@ -133,13 +143,13 @@ function init() {
         animalPeso.innerHTML = "Peso: " + animal.peso + "g";
 
         var animalCapEstomago = document.getElementById('animalCapEstomago');
-        animalCapEstomago.innerHTML = "Capacidad de estomago: " + animal.capacidadEstomago + "cc";
+        animalCapEstomago.innerHTML = "Capacidad de estomago: " + animal.capacidadEstomago;
 
         var animalCapAgua = document.getElementById('animalCapAgua');
-        animalCapAgua.innerHTML = "Consumo de agua: " + animal.capacidaConsumoAgua + "cc";
+        animalCapAgua.innerHTML = "Consumo de agua: " + animal.capacidaConsumoAgua;
 
         var animalCapAlimento = document.getElementById('animalCapAlimento');
-        animalCapAlimento.innerHTML = "Consumo de alimento: " + animal.capacidadConsumoAlimento + "cc";
+        animalCapAlimento.innerHTML = "Consumo de alimento: " + animal.capacidadConsumoAlimento;
 
         var animalCapProduccion = document.getElementById('animalCapProduccion');
         animalCapProduccion.innerHTML = "Capacidad de producción: " + animal.capacidadProduccion;
@@ -199,6 +209,32 @@ function init() {
         console.log(procesoProduccion);
         return procesoProduccion;
     }
+
+
+  
+    //---------------------PopUps---------------------
+
+
+    btnComprar.addEventListener('click', mostrarPopupCompra, false);
+
+    btnVender.addEventListener('click', mostrarPopupVenta, false);
+
+    btnCerrarPopUpVentas.addEventListener('click', ocultarPopUp, false);
+    btnCerrarPopUpCompras.addEventListener('click', ocultarPopUp, false);
+    
+    function mostrarPopupCompra(){
+        popUpCompras.classList.remove('ocultarPopUp');
+    }
+
+    function mostrarPopupVenta(){
+        popUpVentas.classList.remove('ocultarPopUp');
+    }
+
+    function ocultarPopUp(){
+        popUpVentas.classList.add('ocultarPopUp');
+        popUpCompras.classList.add('ocultarPopUp');
+    }
+    
 
 
 }
