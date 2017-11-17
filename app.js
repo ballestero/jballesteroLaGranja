@@ -4,52 +4,52 @@ function init() {
 //pnombre,pedad,paltura,ppeso,ptamanno,pcapacidadEstomago,pcapacidadConsumoAgua,pcapacidadConsumoAlimento,pcapacidadProduccion,ptipoDeProduccion
     var animals = [];
     var vaca = new Vaca('Matilde','10','1.40','500','200','75','125','130','Leche','100');
-    vaca.color = 'blue';
+    //vaca.color = 'blue';
     vaca.tipo = 'vaca';
     animals.push(vaca);
 
     vaca = new Vaca('Clotilde','15','1.30','420','180','70','110','115','Leche','100');
-    vaca.color = 'green';
+    //vaca.color = 'green';
     vaca.tipo = 'vaca';
     animals.push(vaca);
 
     vaca = new Vaca('Florina','8','1.37','435','188','79','109','142','Leche','100');
-    vaca.color = 'cyan';
+    //vaca.color = 'cyan';
     vaca.tipo = 'vaca';
     animals.push(vaca);
 
     vaca = new Vaca('Juana','12','1.45','510','225','85','140','139','Leche','100');
-    vaca.color = 'brown';
+    //vaca.color = 'brown';
     vaca.tipo = 'vaca';
     animals.push(vaca);
 
     var perro = new Perro('Renji','6','0.70','15','75','20','55','0','N/A','100');
-    perro.color = 'purple';
+    //perro.color = 'purple';
     perro.tipo = 'perro'
     animals.push(perro);
 
     var gato = new Gato('Misifus','2','0.45','5','45','15','30','0','N/A','100');
-    gato.color = 'purple';
+    //gato.color = 'purple';
     gato.tipo = 'gato'
     animals.push(gato);
 
     var cerdo = new Cerdo('Peggy','4','1','92','115','25','85','30','Tocino','100');
-    cerdo.color = 'purple';
+    //cerdo.color = 'purple';
     cerdo.tipo = 'cerdo'
     animals.push(cerdo);
 
     var caballo = new Caballo('MR.Ed','2','1.45','5','45','15','30','0','N/A','100');
-    caballo.color = 'purple';
+    //caballo.color = 'purple';
     caballo.tipo = 'caballo';
     animals.push(caballo);
 
     var gallina = new Gallina('Claudia','2','0.35','3','15','6','9','30','Huevos','100');
-    gallina.color = 'purple';
+    //gallina.color = 'purple';
     gallina.tipo = 'gallina'
     animals.push(gallina);
 
     var pato = new Pato('Lucas','3','0.38','4','23','8','15','30','Huevos','100');
-    pato.color = 'purple';
+    //pato.color = 'purple';
     pato.tipo = 'pato'
     animals.push(pato);
     var granja = new Granja('2000','200','600','60','50','3000','1')
@@ -129,7 +129,7 @@ function init() {
         console.log(event);
         var animal = getAnimalByName(event.target.id);
         console.log(animal);
-        event.target.style.background = animal.color;
+        //event.target.style.background = animal.color;
         animalContainer_title.innerHTML = animal.nombre;
 
         
