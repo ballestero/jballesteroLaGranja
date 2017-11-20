@@ -2,7 +2,8 @@ var Pato = (
 	function () {
 		function Pato(pnombre,pedad,paltura,ppeso,pcapacidadEstomago,pcapacidadConsumoAgua,pcapacidadConsumoAlimento,pcapacidadProduccion,ptipoDeProduccion,pfelicidad) {
 			Animal.call(this, pnombre,pedad,paltura,ppeso,pcapacidadEstomago,pcapacidadConsumoAgua,pcapacidadConsumoAlimento,pcapacidadProduccion,ptipoDeProduccion,pfelicidad);
-
+			this.tipo ='pato';
+			this.precio = 90;
 		}
 		//Heredar los metodos definidos en Animal (prototype)
 		Pato.prototype = Object.create(Animal.prototype);

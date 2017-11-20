@@ -2,6 +2,8 @@ var Cerdo = (
 	function () {
 		function Cerdo(pnombre,pedad,paltura,ppeso,pcapacidadEstomago,pcapacidadConsumoAgua,pcapacidadConsumoAlimento,pcapacidadProduccion,ptipoDeProduccion,pfelicidad) {
 			Animal.call(this, pnombre,pedad,paltura,ppeso,pcapacidadEstomago,pcapacidadConsumoAgua,pcapacidadConsumoAlimento,pcapacidadProduccion,ptipoDeProduccion,pfelicidad);
+			this.tipo ='cerdo';
+			this.precio = 300;
 		}
 		//Heredar los metodos definidos en Animal (prototype)
 		Cerdo.prototype = Object.create(Animal.prototype);

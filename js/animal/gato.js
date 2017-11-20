@@ -2,6 +2,8 @@ var Gato = (
 	function () {
 		function Gato(pnombre,pedad,paltura,ppeso,pcapacidadEstomago,pcapacidadConsumoAgua,pcapacidadConsumoAlimento,pcapacidadProduccion,ptipoDeProduccion,pfelicidad) {
 			Animal.call(this, pnombre,pedad,paltura,ppeso,pcapacidadEstomago,pcapacidadConsumoAgua,pcapacidadConsumoAlimento,pcapacidadProduccion,ptipoDeProduccion,pfelicidad);
+			this.tipo ='gato';
+			this.precio = 100;
 		}
 		//Heredar los metodos definidos en Animal (prototype)
 		Gato.prototype = Object.create(Animal.prototype);
