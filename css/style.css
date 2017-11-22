@@ -33,11 +33,13 @@ body{
     justify-content: left;
 }
 .animalsContainer{
-    width: 20%;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
     padding: 2em 0;
+    width: 75%;
+    overflow: auto;
+    height: 100vh;
 }
 
 .controlsContainer{
@@ -48,11 +50,12 @@ body{
 }
 
 .animalCardContainer{
-    width: 80%;
-    min-width: 150px;
+    width: 22%;
+    min-width: 200px;
     margin: 1em auto;
     background: rgba(255,255,255, 0.5);
-    padding: 1em 0
+    padding: 1em 0;
+    height: 16em
 }
 
 .control{
@@ -63,16 +66,8 @@ body{
     padding: 1em 0
 }
 
-.animalsContainer{
-    width: 75%;
-    overflow: auto;
-    height: 100vh;
-}
 
-.animalCardContainer{
-    width: 22%;
-    min-width: 200px;
-}
+
 
 .animalCardContainer div{
     width: 120px;
