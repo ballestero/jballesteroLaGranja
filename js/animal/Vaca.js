@@ -32,8 +32,7 @@ var Vaca = (
 			//this.capacidadProduccion
 			//this.cantidadDeProducto = 0;
 			//this.velocidadDeProducion = 0
-
-			if (this.capacidadProduccion <= this.cantidadDeProducto) {
+			if (this.capacidadProduccion >= this.cantidadDeProducto) {
 				if (this.tiempo >= this.tiempoDeProduction) {
 					this.cantidadDeProducto += this.cantidadDeProductoPorTiempo;
 					this.tiempo = 0;
@@ -48,6 +47,7 @@ var Vaca = (
 		Vaca.prototype.update = function () {
 			this.tiempo++;
 			this.crearProducto();
+
 		}
 
 		return Vaca;

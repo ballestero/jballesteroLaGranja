@@ -113,9 +113,6 @@ function init() {
     }
 
     function update() {
-
-        
-
         for (var i = 0; i < animals.length; i++) {
             animals[i].update();
         }
@@ -180,8 +177,11 @@ function init() {
         var animalCapAlimento = document.getElementById('animalCapAlimento');
         animalCapAlimento.innerHTML = `Consumo de alimento: ${currentAnimalSelected.capacidadConsumoAlimento}`;
 
+        //var animalCapProduccion = document.getElementById('animalCapProduccion');
+        //animalCapProduccion.innerHTML = `Cantidad de producción: ${currentAnimalSelected.cantidadDeProducto}`;
+
         var animalCapProduccion = document.getElementById('animalCapProduccion');
-        animalCapProduccion.innerHTML = `Cantidad de producción: ${currentAnimalSelected.cantidadDeProducto}`;
+        animalCapProduccion.innerHTML = `Cantidad de producción: ${parseFloat(Math.round(currentAnimalSelected.cantidadDeProducto * 100) / 100).toFixed(2)}`;
 
         var animalTipoProduccion = document.getElementById('animalTipoProduccion');
         animalTipoProduccion.innerHTML = `Tipo de Producción: ${currentAnimalSelected.tipoDeProduccion}`;
