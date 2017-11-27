@@ -11,6 +11,9 @@ var Granja = (
 			this.precioMaiz = 3;
 			this.precioAlimento = 5;
 			this.precioPasto = 2;
+			this.precioLeche = 10;
+			this.precioTocino = 15;
+			this.precioHuevos = 13;
 		}
 		//Class Methods
 

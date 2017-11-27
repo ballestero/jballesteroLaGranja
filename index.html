@@ -24,33 +24,33 @@
         <div class="controlsContainer">
             <div class="farmContainer control">
                 <h2>Granja</h2>
-                    <div id="infoGranja">
-                        <p id="granjaDinero"></p>
-                        <p id="granjaHuevos"></p>
-                        <p id="granjaLeche"></p>
-                        <p id="granjaTocino"></p>
-                        <p id="granjaMaiz"></p>
-                        <p id="granjaAlimento"></p>
-                        <p id="granjaPasto"></p>    
-                    </div >
-                    <div class="btns">
-                        <button class="btnStyle " type="button" id="btnComprar">Comprar</button>
-                        <button class="btnStyle " type="button" id="btnVender">Vender</button>
-                    </div>
+                <div id="infoGranja">
+                    <p id="granjaDinero"></p>
+                    <p id="granjaHuevos"></p>
+                    <p id="granjaLeche"></p>
+                    <p id="granjaTocino"></p>
+                    <p id="granjaMaiz"></p>
+                    <p id="granjaAlimento"></p>
+                    <p id="granjaPasto"></p>
+                </div>
+                <div class="btns">
+                    <button class="btnStyle " type="button" id="btnComprar">Comprar</button>
+                    <button class="btnStyle " type="button" id="btnVender">Vender</button>
+                </div>
             </div>
             <div class="animalContainer control" id="animalContainer">
                 <h2 id="animalTitle">Información</h2>
                 <div class="infoAnimal">
-                <p id="animalEdad">Seleccione un animal</p>
-                <p id="animalAltura"></p>
-                <p id="animalPeso"></p>
-                <p id="animalCapEstomago"></p>
-                <p id="animalCapAgua"></p>
-                <p id="animalCapAlimento"></p>
-                <p id="animalCapProduccion"></p>
-                <p id="animalTipoProduccion"></p>
-                <p id="animalFelicidad"></p>
-                </div >
+                    <p id="animalEdad">Seleccione un animal</p>
+                    <p id="animalAltura"></p>
+                    <p id="animalPeso"></p>
+                    <p id="animalCapEstomago"></p>
+                    <p id="animalCapAgua"></p>
+                    <p id="animalCapAlimento"></p>
+                    <p id="animalCapProduccion"></p>
+                    <p id="animalTipoProduccion"></p>
+                    <p id="animalFelicidad"></p>
+                </div>
                 <div class="btns">
                     <button type="button" id="producirBtn"></button>
                     <button type="button" id="comerBtn"></button>
@@ -64,7 +64,9 @@
 
     <div id="popUpCompras" class="btns pop-up">
         <div class="compras">
-            <button class="btnStyle" type="button" id="cerrarPopUpC" ><img src="imgs/cerrarPopUp.svg" alt=""></button>
+            <button class="btnStyle" type="button" id="cerrarPopUpC">
+                <img src="imgs/cerrarPopUp.svg" alt="">
+            </button>
 
             <h2>Comprar</h2>
 
@@ -79,9 +81,13 @@
                 <option value="perro">Perro</option>
                 <option value="gato">Gato</option>
             </select>
+            <label for="nombreAnimalNuevo">Nombre:</label>
+            <input type="text" class="cantidadAlimento sltStyle" id="nombreAnimalNuevo">
             <button class="btnStyle" type="button" id="btnComprarAnimal">Comprar Animal</button>
 
-            <br><br><br>
+            <br>
+            <br>
+            <br>
 
             <h3>Alimento:</h3>
             <select name="" id="sltAlimento" class="sltStyle">
@@ -97,15 +103,25 @@
         </div>
     </div>
 
+
+
     <div id="popUpVentas" class="btns pop-up">
         <div class="ventas">
-            <button class="btnStyle" type="button"  id="cerrarPopUpV" ><img src="imgs/cerrarPopUp.svg" alt=""></button>
+            <button class="btnStyle" type="button" id="cerrarPopUpV">
+                <img src="imgs/cerrarPopUp.svg" alt="">
+            </button>
             <h2>Vender</h2>
-            <button class="btnStyle" type="button" id="btnVHuevos">Huevos</button>
-            <button class="btnStyle" type="button" id="btnVLeche">Leche</button>
-            <button class="btnStyle" type="button" id="btnVTocino">Tocino</button>
+            <select name="" id="sltVender" class="sltStyle">
+                <option value="">Seleccione un producto</option>
+                <option value="leche">Leche</option>
+                <option value="huevos">Huevos</option>
+                <option value="tocino">Tocino</option>
+            </select>
+            <label for="cantidadProducto">Cantidad:</label>
+            <input type="number" class="cantidadAlimento sltStyle" id="cantidadProducto" min="1">
+            <button class="btnStyle" type="button" id="btnVenderProducto">Vender</button>
         </div>
-        
+
     </div>
 
 
