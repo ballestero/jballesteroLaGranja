@@ -23,8 +23,14 @@ var Cerdo = (
 		}
 
 
-		Cerdo.prototype.producir = function () {
-			console.log('Recolectar Tocino');
+		Cerdo.prototype.producir = function (pproductoGranja) {
+			console.log(pproductoGranja);
+			pproductoGranja += this.cantidadDeProducto;
+			this.cantidadDeProducto = 0;
+
+			console.log(pproductoGranja);
+
+			return pproductoGranja;
 		};
 
 		Cerdo.prototype.crearProducto = function () {
@@ -35,10 +41,10 @@ var Cerdo = (
 				if (this.tiempo >= this.tiempoDeProduction) {
 					this.cantidadDeProducto += this.cantidadDeProductoPorTiempo;
 					this.tiempo = 0;
-					console.log(this.nombre + ' tiene ' + this.cantidadDeProducto + ' de producto!');
+					//console.log(this.nombre + ' tiene ' + this.cantidadDeProducto + ' de producto!');
 				}
 			} else {
-				//console.log('Cerdo lleno');
+				console.log(this.nombre + 'lleno su producción');
 			}
 
 		}

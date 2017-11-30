@@ -18,8 +18,14 @@ var Pato = (
 			console.log(this.nombre + ' soy una Pato y estoy comiendo.');
 		}
 
-		Pato.prototype.producir = function () {
-			console.log('Recoger huevos');
+		Pato.prototype.producir = function (pproductoGranja) {
+			console.log(pproductoGranja);
+			pproductoGranja += this.cantidadDeProducto;
+			this.cantidadDeProducto = 0;
+
+			console.log(pproductoGranja);
+
+			return pproductoGranja;
 		};
 
 		Pato.prototype.crearProducto = function () {
@@ -30,10 +36,10 @@ var Pato = (
 				if (this.tiempo >= this.tiempoDeProduction) {
 					this.cantidadDeProducto += this.cantidadDeProductoPorTiempo;
 					this.tiempo = 0;
-					console.log(this.nombre + ' tiene ' + this.cantidadDeProducto + ' de producto!');
+					//console.log(this.nombre + ' tiene ' + this.cantidadDeProducto + ' de producto!');
 				}
 			} else {
-				//Vace llena
+				console.log(this.nombre + 'lleno su producción');
 			}
 
 		}

@@ -23,8 +23,14 @@ var Gallina = (
 			console.log(this.nombre + ' soy una Gallina y estoy comiendo.');
 		}
 
-		Gallina.prototype.producir = function () {
-			console.log('Recoger huevos');
+		Gallina.prototype.producir = function (pproductoGranja) {
+			console.log(pproductoGranja);
+			pproductoGranja += this.cantidadDeProducto;
+			this.cantidadDeProducto = 0;
+
+			console.log(pproductoGranja);
+
+			return pproductoGranja;
 		};
 
 		Gallina.prototype.crearProducto = function () {
@@ -35,10 +41,10 @@ var Gallina = (
 				if (this.tiempo >= this.tiempoDeProduction) {
 					this.cantidadDeProducto += this.cantidadDeProductoPorTiempo;
 					this.tiempo = 0;
-					console.log(this.nombre + ' tiene ' + this.cantidadDeProducto + ' de producto!');
+					//console.log(this.nombre + ' tiene ' + this.cantidadDeProducto + ' de producto!');
 				}
 			} else {
-				//Vace llena
+				console.log(this.nombre + ' lleno su producción');
 			}
 
 		}
