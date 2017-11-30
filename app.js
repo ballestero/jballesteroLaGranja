@@ -126,13 +126,13 @@ function init() {
     granjaDinero.innerHTML = `Dienero: $  ${granja.dinero}`;
 
     var granjaHuevos = document.getElementById('granjaHuevos');
-    granjaHuevos.innerHTML = `Huevos: ${granja.huevos}`;
+    granjaHuevos.innerHTML = `Huevos: ${parseFloat(Math.round(granja.huevos * 100)/ 100).toFixed(1)}`;
 
     var granjaLeche = document.getElementById('granjaLeche');
-    granjaLeche.innerHTML = `Leche:  ${granja.leche}`;
+    granjaLeche.innerHTML = `Leche: ${parseFloat(Math.round(granja.leche * 100)/ 100).toFixed(1)}`;
 
     var granjaTocino = document.getElementById('granjaTocino');
-    granjaTocino.innerHTML = `Tocino: ${granja.tocino}`;
+    granjaTocino.innerHTML = `Tocino: ${parseFloat(Math.round(granja.tocino * 100)/ 100).toFixed(1)}`;
 
     var granjaMaiz = document.getElementById('granjaMaiz').innerHTML = `Maiz: ${granja.maiz}`;
 
@@ -141,6 +141,7 @@ function init() {
 
     var granjaPasto = document.getElementById('granjaPasto');
     granjaPasto.innerHTML = `Pasto: ${granja.pasto}`;
+
 
 
     document.getElementById('btnComprarAnimal').addEventListener('click', btnComprarAnimal, false);
@@ -461,28 +462,28 @@ function init() {
 
             var sumarProduccion = selectAnimal.producir(granja.leche);
             granja.leche = sumarProduccion;
-            granjaLeche.innerHTML = `Leche: ${parseFloat(Math.round(granja.leche))}`;
+            granjaLeche.innerHTML = `Leche: ${parseFloat(Math.round(granja.leche * 100)/ 100).toFixed(1)}`;
 
             break;
             case 'cerdo' :
 
             var sumarProduccion = selectAnimal.producir(granja.tocino);
             granja.tocino = sumarProduccion;
-            granjaTocino.innerHTML = `Tocino: ${parseFloat(Math.round(granja.tocino))}`;
+            granjaTocino.innerHTML = `Tocino: ${parseFloat(Math.round(granja.tocino * 100)/ 100).toFixed(1)}`;
 
             break;
             case 'pato' :
 
             var sumarProduccion = selectAnimal.producir(granja.huevos);
             granja.huevos = sumarProduccion;
-            granjaHuevos.innerHTML = `Huevos: ${parseFloat(Math.round(granja.huevos))}`;
+            granjaHuevos.innerHTML = `Huevos: ${parseFloat(Math.round(granja.huevos * 100)/ 100).toFixed(1)}`;
 
             break;
             case 'gallina':
 
             var sumarProduccion = selectAnimal.producir(granja.huevos);
             granja.huevos = sumarProduccion;
-            granjaHuevos.innerHTML = `Huevos: ${parseFloat(Math.round(granja.huevos))}`;
+            granjaHuevos.innerHTML = `Huevos: ${parseFloat(Math.round(granja.huevos * 100)/ 100).toFixed(1)}`;
             
         }
         
@@ -501,7 +502,7 @@ function init() {
                     granja.dinero += ganancia;
 
                     document.getElementById('granjaDinero').innerHTML = `Dinero: $ ${granja.dinero}`;
-                    document.getElementById('granjaLeche').innerHTML = `Leche: ${granja.leche}`;
+                    document.getElementById('granjaLeche').innerHTML = `Leche: ${parseFloat(Math.round(granja.leche * 100)/ 100).toFixed(1)}`;
                     ocultarPopUp();
                 } else {
                     console.log(`No hay suficiente producto`);
@@ -515,7 +516,7 @@ function init() {
                     granja.dinero += ganancia;
 
                     document.getElementById('granjaDinero').innerHTML = `Dinero: $ ${granja.dinero}`;
-                    document.getElementById('granjaHuevos').innerHTML = `Huevos: ${granja.huevos}`;
+                    document.getElementById('granjaHuevos').innerHTML = `Huevos: ${parseFloat(Math.round(granja.huevos * 100)/ 100).toFixed(1)}`;
                     ocultarPopUp();
                 } else {
                     console.log(`No hay suficiente producto`);
@@ -529,13 +530,12 @@ function init() {
                     granja.dinero += ganancia;
 
                     document.getElementById('granjaDinero').innerHTML = `Dinero: $ ${granja.dinero}`;
-                    document.getElementById('granjaTocino').innerHTML = `Tocino: ${granja.tocino}`;
+                    document.getElementById('granjaTocino').innerHTML = `Tocino: ${parseFloat(Math.round(granja.tocino * 100)/ 100).toFixed(1)}`;
                     ocultarPopUp();
                 } else {
                     console.log(`No hay suficiente producto`);
                 };
         }
-
 
 
 
