@@ -1,6 +1,6 @@
 var Animal = (
 	function () {
-		function Animal(pnombre, pedad, paltura, ppeso, pcapacidadEstomago, pcapacidadConsumoAgua, pcapacidadConsumoAlimento, pcapacidadProduccion, ptipoDeProduccion, pfelicidad) {
+		function Animal(pnombre, pedad, paltura, ppeso, pcapacidadEstomago, pcapacidadConsumoAgua, pcapacidadConsumoAlimento, pcapacidadProduccion, ptipoDeProduccion, pfelicidad, papetito, psed) {
 			this.nombre = pnombre;
 			this.edad = pedad;
 			this.altura = paltura;
@@ -11,6 +11,8 @@ var Animal = (
 			this.capacidadProduccion = pcapacidadProduccion;
 			this.tipoDeProduccion = ptipoDeProduccion;
 			this.felicidad = pfelicidad;
+			this.apetito = papetito;
+			this.sed = psed;
 			this.precio = 0;
 
 			this.tiempo = 0;
@@ -23,6 +25,7 @@ var Animal = (
 		Animal.prototype.comer = function () {};
 		Animal.prototype.caminar = function () {};
 		Animal.prototype.beber = function () {};
+		Animal.prototype.acariciar = function () {};
 
 		Animal.prototype.producir = function () {
 			// console.log('Este animal no produce nada!');

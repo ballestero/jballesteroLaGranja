@@ -1,9 +1,11 @@
 var Gallina = (
 	function () {
-		function Gallina(pnombre,pedad,paltura,ppeso,pcapacidadEstomago,pcapacidadConsumoAgua,pcapacidadConsumoAlimento,pcapacidadProduccion,ptipoDeProduccion,pfelicidad) {
-			Animal.call(this, pnombre,pedad,paltura,ppeso,pcapacidadEstomago,pcapacidadConsumoAgua,pcapacidadConsumoAlimento,pcapacidadProduccion,ptipoDeProduccion,pfelicidad);
+		function Gallina(pnombre,pedad,paltura,ppeso,pcapacidadEstomago,pcapacidadConsumoAgua,pcapacidadConsumoAlimento,pcapacidadProduccion,ptipoDeProduccion,pfelicidad, papetito, psed) {
+			Animal.call(this, pnombre,pedad,paltura,ppeso,pcapacidadEstomago,pcapacidadConsumoAgua,pcapacidadConsumoAlimento,pcapacidadProduccion,ptipoDeProduccion,pfelicidad, papetito, psed);
 			this.tipo = 'gallina';
 			this.precio = 75;
+			this.porcionComida = 10;
+			this.porcionAgua = 5;
 
 			this.cantidadDeProducto = 0;
 			// this.velocidadDeProducion = 2 * this.FRAMERATE;
@@ -15,13 +17,30 @@ var Gallina = (
 		Gallina.prototype.constructor = Animal;
 
 		//Class Methods
-		Gallina.prototype.comer = function () {
-			console.log(this.nombre + ' soy una Gallina y estoy comiendo.');
+		Gallina.prototype.comer = function (pmaiz) {
+			this.apetito += this.porcionComida;
+			pmaiz -= this.porcionComida;;
+			return pmaiz;
 		}
 
-		Gallina.prototype.brincar = function () {
-			console.log(this.nombre + ' soy una Gallina y estoy comiendo.');
-		}
+		Gallina.prototype.beber = function () {
+			if(this.sed < this.capacidaConsumoAgua){
+				this.sed += this.porcionAgua;
+			}else{
+				this.sed = this.capacidaConsumoAgua;
+				console.log(`La Gallina esta llena`)
+			};
+		};
+
+		Gallina.prototype.acariciar = function () {
+			if(this.felicidad < 100){
+				this.felicidad += 30;
+				if(this.felicidad > 100){
+					this.felicidad = 100;
+				}
+			};
+			this.update();
+		};
 
 		Gallina.prototype.producir = function (pproductoGranja) {
 			console.log(pproductoGranja);
@@ -44,7 +63,7 @@ var Gallina = (
 					//console.log(this.nombre + ' tiene ' + this.cantidadDeProducto + ' de producto!');
 				}
 			} else {
-				console.log(this.nombre + ' lleno su producción');
+				//console.log(this.nombre + ' lleno su producción');
 			}
 
 		}

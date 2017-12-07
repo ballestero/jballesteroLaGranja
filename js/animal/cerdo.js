@@ -1,10 +1,14 @@
 var Cerdo = (
 	function () {
-		function Cerdo(pnombre,pedad,paltura,ppeso,pcapacidadEstomago,pcapacidadConsumoAgua,pcapacidadConsumoAlimento,pcapacidadProduccion,ptipoDeProduccion,pfelicidad) {
-			Animal.call(this, pnombre,pedad,paltura,ppeso,pcapacidadEstomago,pcapacidadConsumoAgua,pcapacidadConsumoAlimento,pcapacidadProduccion,ptipoDeProduccion,pfelicidad);
+		function Cerdo(pnombre,pedad,paltura,ppeso,pcapacidadEstomago,pcapacidadConsumoAgua,pcapacidadConsumoAlimento,pcapacidadProduccion,ptipoDeProduccion,pfelicidad, papetito, psed) {
+			Animal.call(this, pnombre,pedad,paltura,ppeso,pcapacidadEstomago,pcapacidadConsumoAgua,pcapacidadConsumoAlimento,pcapacidadProduccion,ptipoDeProduccion,pfelicidad, papetito, psed);
 			this.tipo ='cerdo';
 			this.precio = 300;
 			this.cantidadDeProducto = 0;
+			this.porcionComida = 10;
+			this.porcionAgua = 5;
+
+
 			// this.velocidadDeProducion = 2 * this.FRAMERATE;
 			this.tiempoDeProduction = 2 * this.FRAMERATE;
 			this.cantidadDeProductoPorTiempo = 1 * (this.felicidad / 100);
@@ -14,13 +18,30 @@ var Cerdo = (
 		Cerdo.prototype.constructor = Animal;
 
 		//Class Methods
-		Cerdo.prototype.comer = function () {
-			console.log(this.nombre + ' soy una Cerdo y estoy comiendo.');
+		Cerdo.prototype.comer = function (palimento) {
+			this.apetito += this.porcionComida;
+			palimento -= this.porcionComida;;
+			return palimento;
 		}
 
-		Cerdo.prototype.brincar = function () {
-			console.log(this.nombre + ' soy una Cerdo y estoy comiendo.');
-		}
+		Cerdo.prototype.beber = function () {
+			if(this.sed < this.capacidaConsumoAgua){
+				this.sed += this.porcionAgua;
+			}else{
+				this.sed = this.capacidaConsumoAgua;
+				console.log(`El cerdo esta lleno`)
+			};
+		};
+
+		Cerdo.prototype.acariciar = function () {
+			if(this.felicidad < 100){
+				this.felicidad += 30;
+				if(this.felicidad > 100){
+					this.felicidad = 100;
+				}
+			};
+			this.update();
+		};
 
 
 		Cerdo.prototype.producir = function (pproductoGranja) {
@@ -44,7 +65,7 @@ var Cerdo = (
 					//console.log(this.nombre + ' tiene ' + this.cantidadDeProducto + ' de producto!');
 				}
 			} else {
-				console.log(this.nombre + 'lleno su producción');
+				//console.log(this.nombre + 'lleno su producción');
 			}
 
 		}

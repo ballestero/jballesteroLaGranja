@@ -1,22 +1,41 @@
 var Pato = (
 	function () {
-		function Pato(pnombre,pedad,paltura,ppeso,pcapacidadEstomago,pcapacidadConsumoAgua,pcapacidadConsumoAlimento,pcapacidadProduccion,ptipoDeProduccion,pfelicidad) {
-			Animal.call(this, pnombre,pedad,paltura,ppeso,pcapacidadEstomago,pcapacidadConsumoAgua,pcapacidadConsumoAlimento,pcapacidadProduccion,ptipoDeProduccion,pfelicidad);
+		function Pato(pnombre,pedad,paltura,ppeso,pcapacidadEstomago,pcapacidadConsumoAgua,pcapacidadConsumoAlimento,pcapacidadProduccion,ptipoDeProduccion,pfelicidad, papetito, psed) {
+			Animal.call(this, pnombre,pedad,paltura,ppeso,pcapacidadEstomago,pcapacidadConsumoAgua,pcapacidadConsumoAlimento,pcapacidadProduccion,ptipoDeProduccion,pfelicidad, papetito, psed);
 			this.tipo ='pato';
 			this.precio = 90;
+			this.porcionComida = 10;
+			this.porcionAgua = 5;
 		}
 		//Heredar los metodos definidos en Animal (prototype)
 		Pato.prototype = Object.create(Animal.prototype);
 		Pato.prototype.constructor = Animal;
 
 		//Class Methods
-		Pato.prototype.comer = function () {
-			console.log(this.nombre + ' soy una Pato y estoy comiendo.');
+		Pato.prototype.comer = function (pmaiz) {
+			this.apetito += this.porcionComida;
+			pmaiz -= this.porcionComida;;
+			return pmaiz;
 		}
 
-		Pato.prototype.brincar = function () {
-			console.log(this.nombre + ' soy una Pato y estoy comiendo.');
-		}
+		Pato.prototype.beber = function () {
+			if(this.sed < this.capacidaConsumoAgua){
+				this.sed += this.porcionAgua;
+			}else{
+				this.sed = this.capacidaConsumoAgua;
+				console.log(`El Pato esta lleno`)
+			};
+		};
+
+		Pato.prototype.acariciar = function () {
+			if(this.felicidad < 100){
+				this.felicidad += 30;
+				if(this.felicidad > 100){
+					this.felicidad = 100;
+				}
+			};
+			this.update();
+		};
 
 		Pato.prototype.producir = function (pproductoGranja) {
 			console.log(pproductoGranja);
@@ -39,7 +58,7 @@ var Pato = (
 					//console.log(this.nombre + ' tiene ' + this.cantidadDeProducto + ' de producto!');
 				}
 			} else {
-				console.log(this.nombre + 'lleno su producción');
+				//console.log(this.nombre + 'lleno su producción');
 			}
 
 		}

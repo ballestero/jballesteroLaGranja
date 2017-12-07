@@ -7,10 +7,12 @@
             "peso": 500,
             "tamanno": 200,
             "capacidadEstomago": 75,
-            "capacidadConsumoAgua": 125,
+            "capacidadConsumoAgua": 60,
             "capacidadProduccion": 80,
             "tipoDeProduccion": "Leche",
-            "felicidad": 60,
+            "felicidad": 50,
+            "apetito" : 45,
+            "sed" : 10,
             "tipo": "vaca"
         },
         {
@@ -20,10 +22,12 @@
             "peso": 510,
             "tamanno": 225,
             "capacidadEstomago": 55,
-            "capacidadConsumoAgua": 140,
+            "capacidadConsumoAgua": 50,
             "capacidadProduccion": 100,
             "tipoDeProduccion": "Leche",
-            "felicidad": 70,
+            "felicidad": 100,
+            "apetito" : 60,
+            "sed" : 10,
             "tipo": "vaca"
         },
         {
@@ -33,10 +37,12 @@
             "peso": 420,
             "tamanno": 180,
             "capacidadEstomago": 70,
-            "capacidadConsumoAgua": 110,
-            "capacidadProduccion": 60,
+            "capacidadConsumoAgua": 60,
+            "capacidadProduccion": 100,
             "tipoDeProduccion": "Leche",
-            "felicidad": 10,
+            "felicidad": 100,
+            "apetito" : 90,
+            "sed" : 10,
             "tipo": "vaca"
         },
         {
@@ -46,10 +52,12 @@
             "peso": 435,
             "tamanno": 188,
             "capacidadEstomago": 79,
-            "capacidadConsumoAgua": 109,
+            "capacidadConsumoAgua": 55,
             "capacidadProduccion": 40,
             "tipoDeProduccion": "Leche",
             "felicidad": 100,
+            "apetito" : 50,
+            "sed" : 10,
             "tipo": "vaca"
         },
         {
@@ -63,6 +71,8 @@
             "capacidadProduccion": 0,
             "tipoDeProduccion": "N/A",
             "felicidad": 100,
+            "apetito" : 50,
+            "sed" : 10,
             "tipo": "perro"
         },
         {
@@ -76,6 +86,8 @@
             "capacidadProduccion": 0,
             "tipoDeProduccion": "N/A",
             "felicidad": 100,
+            "apetito" : 50,
+            "sed" : 10,
             "tipo": "gato"
         },
         {
@@ -89,6 +101,8 @@
             "capacidadProduccion": 30,
             "tipoDeProduccion": "Tocino",
             "felicidad": 100,
+            "apetito" : 50,
+            "sed" : 10,
             "tipo": "cerdo"
         },
         {
@@ -102,6 +116,8 @@
             "capacidadProduccion": 0,
             "tipoDeProduccion": "N/A",
             "felicidad": 100,
+            "apetito" : 50,
+            "sed" : 10,
             "tipo": "caballo"
         },
         {
@@ -115,6 +131,8 @@
             "capacidadProduccion": 30,
             "tipoDeProduccion": "Huevos",
             "felicidad": 100,
+            "apetito" : 50,
+            "sed" : 10,
             "tipo": "gallina"
         },
         {
@@ -128,6 +146,8 @@
             "capacidadProduccion": 30,
             "tipoDeProduccion": "Huevos",
             "felicidad": 100,
+            "apetito" : 50,
+            "sed" : 10,
             "tipo": "pato"
         }
     ],
@@ -137,9 +157,9 @@
             "huevos": 10,
             "leche": 10,
             "tocino": 10,
-            "maiz": 10,
+            "maiz": 40,
             "alimento": 100,
-            "pasto": 10
+            "pasto": 100
         }
     ]
 }
