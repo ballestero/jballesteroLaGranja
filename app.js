@@ -136,7 +136,8 @@ function init() {
     var granjaTocino = document.getElementById('granjaTocino');
     granjaTocino.innerHTML = `Tocino: ${parseFloat(Math.round(granja.tocino * 100) / 100).toFixed(1)}`;
 
-    var granjaMaiz = document.getElementById('granjaMaiz').innerHTML = `Maiz: ${granja.maiz}`;
+    var granjaMaiz = document.getElementById('granjaMaiz');
+    granjaMaiz.innerHTML = `Maiz: ${granja.maiz}`;
 
     var granjaAlimento = document.getElementById('granjaAlimento');
     granjaAlimento.innerHTML = `Alimento: ${granja.alimento}`;
@@ -493,50 +494,26 @@ function init() {
     //comer
 
     function comer() {
-        switch (currentAnimalSelected.tipo) {
-            case 'vaca':
-                var restarComida = currentAnimalSelected.comer(granja.pasto);
-                granja.pasto = restarComida;
-                granjaPasto.innerHTML = `Pasto: ${granja.pasto}`;
 
-                break;
-            case 'cerdo':
-                var restarComida = currentAnimalSelected.comer(granja.alimento);
-                granja.alimento = restarComida;
-                granjaAlimento.innerHTML = `Alimento: ${granja.alimento}`;
+        var restarComida = null;
 
-                break;
-            case 'pato':
-                var restarComida = currentAnimalSelected.comer(granja.maiz);
+        if(currentAnimalSelected.tipo === 'vaca' || currentAnimalSelected.tipo === 'caballo'){
+            restarComida = currentAnimalSelected.comer(granja.pasto);
+            granja.pasto = restarComida;
+            granjaPasto.innerHTML = `Pasto: ${granja.pasto}`;
+        }else{
+            if(currentAnimalSelected.tipo === 'pato' || currentAnimalSelected.tipo === 'gallina'){
+                restarComida = currentAnimalSelected.comer(granja.maiz);
                 granja.maiz = restarComida;
+                console.log(granja.maiz);
                 granjaMaiz.innerHTML = `Maiz: ${granja.maiz}`;
-
-                break;
-            case 'gallina':
-                var restarComida = currentAnimalSelected.comer(granja.maiz);
-                granja.maiz = restarComida;
-                granjaMaiz.innerHTML = `Maiz: ${granja.maiz}`;
-
-                break;
-            case 'perro':
-                var restarComida = currentAnimalSelected.comer(granja.alimento);
+            }else{
+                restarComida = currentAnimalSelected.comer(granja.alimento);
                 granja.alimento = restarComida;
                 granjaAlimento.innerHTML = `Alimento: ${granja.alimento}`;
-
-                break;
-            case 'gato':
-                var restarComida = currentAnimalSelected.comer(granja.alimento);
-                granja.alimento = restarComida;
-                granjaAlimento.innerHTML = `Alimento: ${granja.alimento}`;
-
-                break;
-            case 'caballo':
-                var restarComida = currentAnimalSelected.comer(granja.pasto);
-                granja.pasto = restarComida;
-                granjaPasto.innerHTML = `Pasto: ${granja.pasto}`;
-
+            }
         }
-
+        
     }
 
     function beber() {

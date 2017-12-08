@@ -19,7 +19,7 @@ var Gallina = (
 		//Class Methods
 		Gallina.prototype.comer = function (pmaiz) {
 			this.apetito += this.porcionComida;
-			pmaiz -= this.porcionComida;;
+			pmaiz -= this.porcionComida;
 			return pmaiz;
 		}
 

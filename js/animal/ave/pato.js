@@ -14,8 +14,9 @@ var Pato = (
 		//Class Methods
 		Pato.prototype.comer = function (pmaiz) {
 			this.apetito += this.porcionComida;
-			pmaiz -= this.porcionComida;;
+			pmaiz -= this.porcionComida;
 			return pmaiz;
+			
 		}
 
 		Pato.prototype.beber = function () {
