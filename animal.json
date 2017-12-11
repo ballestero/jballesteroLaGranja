@@ -10,7 +10,7 @@
             "capacidadConsumoAgua": 60,
             "capacidadProduccion": 80,
             "tipoDeProduccion": "Leche",
-            "felicidad": 50,
+            "felicidad": null,
             "apetito" : 45,
             "sed" : 10,
             "tipo": "vaca"
@@ -25,8 +25,8 @@
             "capacidadConsumoAgua": 50,
             "capacidadProduccion": 100,
             "tipoDeProduccion": "Leche",
-            "felicidad": 100,
-            "apetito" : 60,
+            "felicidad": null,
+            "apetito" : 30,
             "sed" : 10,
             "tipo": "vaca"
         },
@@ -40,8 +40,8 @@
             "capacidadConsumoAgua": 60,
             "capacidadProduccion": 100,
             "tipoDeProduccion": "Leche",
-            "felicidad": 100,
-            "apetito" : 90,
+            "felicidad": null,
+            "apetito" : 50,
             "sed" : 10,
             "tipo": "vaca"
         },
@@ -55,8 +55,8 @@
             "capacidadConsumoAgua": 55,
             "capacidadProduccion": 40,
             "tipoDeProduccion": "Leche",
-            "felicidad": 100,
-            "apetito" : 50,
+            "felicidad": null,
+            "apetito" : 79,
             "sed" : 10,
             "tipo": "vaca"
         },

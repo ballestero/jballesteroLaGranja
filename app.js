@@ -175,14 +175,11 @@ function init() {
         var animalPeso = document.getElementById('animalPeso');
         animalPeso.innerHTML = `Peso: ${currentAnimalSelected.peso} g`;
 
-        var animalCapEstomago = document.getElementById('animalCapEstomago');
-        animalCapEstomago.innerHTML = `Capacidad de estomago: ${currentAnimalSelected.capacidadEstomago}`;
-
         var animalCapAgua = document.getElementById('animalCapAgua');
-        animalCapAgua.innerHTML = `Consumo de agua: ${currentAnimalSelected.capacidaConsumoAgua}`;
+        animalCapAgua.innerHTML = `Consumo de agua: ${currentAnimalSelected.capacidadConsumoAgua}`;
 
         var animalCapAlimento = document.getElementById('animalCapAlimento');
-        animalCapAlimento.innerHTML = `Consumo de alimento: ${currentAnimalSelected.capacidadConsumoAlimento}`;
+        animalCapAlimento.innerHTML = `Consumo de alimento: ${currentAnimalSelected.capacidadEstomago}`;
 
         var animalCapProduccion = document.getElementById('animalCapProduccion');
         var animalFelicidad = document.getElementById('animalFelicidad');
@@ -197,8 +194,8 @@ function init() {
 
                 animalCapProduccion.innerHTML = `Cantidad de producción: ${parseFloat(Math.round(currentAnimalSelected.cantidadDeProducto * 100) / 100).toFixed(2)}`;
                 animalFelicidad.innerHTML = `Nivel de felicidad: ${parseFloat(Math.round(currentAnimalSelected.felicidad))}%`;
-                animalApetito.innerHTML = `Apetito = ${currentAnimalSelected.apetito}`;
-                animalSed.innerHTML = `Sed = ${currentAnimalSelected.sed}`;
+                animalApetito.innerHTML = `Apetito = ${parseFloat(Math.round(currentAnimalSelected.apetito))}`;
+                animalSed.innerHTML = `Sed = ${parseFloat(Math.round(currentAnimalSelected.sed))}`;
 
             }, 1000);
 
