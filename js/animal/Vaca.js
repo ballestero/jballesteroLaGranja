@@ -82,7 +82,6 @@ var Vaca = (
 					if (this.tiempo >= this.tiempoDeProduction) {
 						this.cantidadDeProducto += this.cantidadDeProductoPorTiempo;
 						this.tiempo = 0;
-						this.felicidad -= 1;
 						if (this.apetito > 0) {
 							this.apetito -= 0.5;
 						}
@@ -102,9 +101,7 @@ var Vaca = (
 			this.promedioApetito = (this.apetito * 100) / this.capacidadEstomago;
 			this.promedioSed = (this.sed * 100) / this.capacidadConsumoAgua;
 
-			this.felicidad = (this.caricia + this.promedioApetito + this.promedioSed) / 3;
-
-			//console.log(this.nombre + ' felicidad: ' + this.felicidad);
+			this.felicidad = (this.caricia + this.promedioApetito + this.promedioSed) / 3; 
 		}
 
 

@@ -1,16 +1,18 @@
 var Gallina = (
 	function () {
-		function Gallina(pnombre,pedad,paltura,ppeso,pcapacidadEstomago,pcapacidadConsumoAgua,pcapacidadConsumoAlimento,pcapacidadProduccion,ptipoDeProduccion,pfelicidad, papetito, psed) {
-			Animal.call(this, pnombre,pedad,paltura,ppeso,pcapacidadEstomago,pcapacidadConsumoAgua,pcapacidadConsumoAlimento,pcapacidadProduccion,ptipoDeProduccion,pfelicidad, papetito, psed);
+		function Gallina(pnombre, pedad, paltura, ppeso, ptamanno, pcapacidadEstomago, pcapacidadConsumoAgua, pcapacidadProduccion, ptipoDeProduccion, pfelicidad, papetito, psed) {
+			Animal.call(this, pnombre, pedad, paltura, ppeso, ptamanno, pcapacidadEstomago, pcapacidadConsumoAgua, pcapacidadProduccion, ptipoDeProduccion, pfelicidad, papetito, psed);
 			this.tipo = 'gallina';
 			this.precio = 75;
-			this.porcionComida = 10;
-			this.porcionAgua = 5;
+			this.porcionComida = null;
+			this.porcionAgua = null;
 
 			this.cantidadDeProducto = 0;
-			// this.velocidadDeProducion = 2 * this.FRAMERATE;
 			this.tiempoDeProduction = 2 * this.FRAMERATE;
-			this.cantidadDeProductoPorTiempo = 1 * (this.felicidad / 100);
+			this.cantidadDeProductoPorTiempo = null;
+			this.caricia = 0;
+			this.promedioApetito = null;
+			this.promedioSed = null;
 		}
 		//Heredar los metodos definidos en Animal (prototype)
 		Gallina.prototype = Object.create(Animal.prototype);
@@ -18,28 +20,43 @@ var Gallina = (
 
 		//Class Methods
 		Gallina.prototype.comer = function (pmaiz) {
-			this.apetito += this.porcionComida;
-			pmaiz -= this.porcionComida;
-			return pmaiz;
+			if (pmaiz > 0) {
+				if (this.apetito < this.capacidadEstomago) {
+					this.porcionComida = this.capacidadEstomago - this.apetito;
+					if (this.porcionComida <= pmaiz) {
+						this.apetito += this.porcionComida;
+						pmaiz -= this.porcionComida;
+						return pmaiz;
+					} else { 
+						this.apetito += pmaiz;
+						pmaiz = 0;
+						return pmaiz;
+					}
+
+				} else {
+					this.apetito = this.capacidadEstomago;
+					console.log('La gallina esta llena');
+					return pmaiz;
+				}
+			} else {
+				console.log('No hya suficiente alimento para este animal');
+				return pmaiz;
+			}
 		}
 
 		Gallina.prototype.beber = function () {
-			if(this.sed < this.capacidaConsumoAgua){
+			if (this.sed < this.capacidadConsumoAgua) {
+				this.porcionAgua = this.capacidadConsumoAgua - this.sed;
 				this.sed += this.porcionAgua;
-			}else{
-				this.sed = this.capacidaConsumoAgua;
+			} else {
+				this.sed = this.capacidadConsumoAgua;
 				console.log(`La Gallina esta llena`)
 			};
 		};
 
 		Gallina.prototype.acariciar = function () {
-			if(this.felicidad < 100){
-				this.felicidad += 30;
-				if(this.felicidad > 100){
-					this.felicidad = 100;
-				}
-			};
-			this.update();
+			console.log(this.caricia);
+			this.caricia = 100;
 		};
 
 		Gallina.prototype.producir = function (pproductoGranja) {
@@ -53,24 +70,40 @@ var Gallina = (
 		};
 
 		Gallina.prototype.crearProducto = function () {
-			//this.capacidadProduccion
-			//this.cantidadDeProducto = 0;
-			//this.velocidadDeProducion = 0
-			if (this.capacidadProduccion >= this.cantidadDeProducto) {
-				if (this.tiempo >= this.tiempoDeProduction) {
-					this.cantidadDeProducto += this.cantidadDeProductoPorTiempo;
-					this.tiempo = 0;
-					//console.log(this.nombre + ' tiene ' + this.cantidadDeProducto + ' de producto!');
+			this.cantidadDeProductoPorTiempo = 1 * (this.felicidad / 100);
+
+			if (this.felicidad > 0) {
+				if (this.cantidadDeProducto <= this.capacidadProduccion) {
+					if (this.tiempo >= this.tiempoDeProduction) {
+						this.cantidadDeProducto += this.cantidadDeProductoPorTiempo;
+						this.tiempo = 0;
+						if (this.apetito > 0) {
+							this.apetito -= 0.5;
+						}
+						if (this.sed > 0) {
+							this.sed -= 0.5
+						}
+						if (this.caricia > 0) {
+							this.caricia -= 2;
+						}
+
+					}
 				}
-			} else {
-				//console.log(this.nombre + ' lleno su producción');
 			}
 
+		}
+
+		Gallina.prototype.calcularFelicidad = function () {
+			this.promedioApetito = (this.apetito * 100) / this.capacidadEstomago;
+			this.promedioSed = (this.sed * 100) / this.capacidadConsumoAgua;
+
+			this.felicidad = (this.caricia + this.promedioApetito + this.promedioSed) / 3; 
 		}
 
 		Gallina.prototype.update = function () {
 			this.tiempo++;
 			this.crearProducto();
+			this.calcularFelicidad();
 
 		}
 		

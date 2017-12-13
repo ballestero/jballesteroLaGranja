@@ -128,13 +128,13 @@ function init() {
     granjaDinero.innerHTML = `Dienero: $  ${granja.dinero}`;
 
     var granjaHuevos = document.getElementById('granjaHuevos');
-    granjaHuevos.innerHTML = `Huevos: ${parseFloat(Math.round(granja.huevos * 100) / 100).toFixed(1)}`;
+    granjaHuevos.innerHTML = `Huevos: ${parseFloat(Math.round(granja.huevos))}`;
 
     var granjaLeche = document.getElementById('granjaLeche');
-    granjaLeche.innerHTML = `Leche: ${parseFloat(Math.round(granja.leche * 100) / 100).toFixed(1)}`;
+    granjaLeche.innerHTML = `Leche: ${parseFloat(Math.round(granja.leche ))}`;
 
     var granjaTocino = document.getElementById('granjaTocino');
-    granjaTocino.innerHTML = `Tocino: ${parseFloat(Math.round(granja.tocino * 100) / 100).toFixed(1)}`;
+    granjaTocino.innerHTML = `Tocino: ${parseFloat(Math.round(granja.tocino ))}`;
 
     var granjaMaiz = document.getElementById('granjaMaiz');
     granjaMaiz.innerHTML = `Maiz: ${granja.maiz}`;
@@ -316,39 +316,40 @@ function init() {
         } else {
             console.log(animals);
             switch (animalSeleccionado) {
+                //nombre, edad, altura, peso, tamanno, capacidadEstomago, capacidadConsumoAgua, capacidadProduccion, tipoDeProduccion, felicidad, apetito, sed
                 case 'vaca':
                     precioDeAnimal = precioDeVaca;
-                    nuevoAnimal = new Vaca(nombreNuevoAnimal, 1, 2, 100, 100, 5, 5, 70, 'leche', 100, 25, 10);
+                    nuevoAnimal = new Vaca(nombreNuevoAnimal, 1, 2, 100, 100, 50, 35, 70, 'leche', 100, 25, 10);
                     break;
 
                 case 'cerdo':
                     precioDeAnimal = precioDeCerdo;
-                    nuevoAnimal = new Cerdo(nombreNuevoAnimal, 4, 1, 92, 115, 25, 85, 45, 'Tocino', 100, 25, 10);
+                    nuevoAnimal = new Cerdo(nombreNuevoAnimal, 4, 1, 92, 115, 60, 85, 45, 'Tocino', 100, 25, 10);
                     break;
 
                 case 'caballo':
                     precioDeAnimal = precioDeCaballo;
-                    nuevoAnimal = new Caballo(nombreNuevoAnimal, 2, 1.45, 5, 45, 15, 30, 0, 'N/A', 100, 25, 10);
+                    nuevoAnimal = new Caballo(nombreNuevoAnimal, 2, 1.45, 5, 45, 80, 30, 0, 'N/A', 100, 25, 10);
                     break;
 
                 case 'gallina':
                     precioDeAnimal = precioDeGallina;
-                    nuevoAnimal = new Gallina(nombreNuevoAnimal, 2, 0.35, 3, 15, 6, 9, 30, 'Huevos', 100, 25, 10);
+                    nuevoAnimal = new Gallina(nombreNuevoAnimal, 2, 0.35, 3, 15, 30, 38, 30, 'Huevos', 100, 25, 10);
                     break;
 
                 case 'pato':
                     precioDeAnimal = precioDePato;
-                    nuevoAnimal = new Pato(nombreNuevoAnimal, 3, 0.38, 4, 23, 8, 15, 30, 'Huevos', 100, 25, 10);
+                    nuevoAnimal = new Pato(nombreNuevoAnimal, 3, 0.38, 4, 23, 8, 35, 30, 'Huevos', 100, 25, 10);
                     break;
 
                 case 'perro':
                     precioDeAnimal = precioDePerro;
-                    nuevoAnimal = new Perro(nombreNuevoAnimal, 6, 0.70, 15, 75, 20, 55, 0, 'N/A', 100, 25, 10);
+                    nuevoAnimal = new Perro(nombreNuevoAnimal, 6, 0.70, 15, 75, 20, 40, 0, 'N/A', 100, 25, 10);
                     break;
 
                 case 'gato':
                     precioDeAnimal = precioDeGato;
-                    nuevoAnimal = new Gato(nombreNuevoAnimal, 2, 0.45, 5, 45, 15, 30, 0, 'N/A', 100, 25, 10);
+                    nuevoAnimal = new Gato(nombreNuevoAnimal, 2, 0.45, 5, 45, 15, 35, 0, 'N/A', 100, 25, 10);
                     break;
 
                 default:
@@ -528,28 +529,28 @@ function init() {
 
                 var sumarProduccion = currentAnimalSelected.producir(granja.leche);
                 granja.leche = sumarProduccion;
-                granjaLeche.innerHTML = `Leche: ${parseFloat(Math.round(granja.leche * 100) / 100).toFixed(1)}`;
+                granjaLeche.innerHTML = `Leche: ${parseFloat(Math.round(granja.leche))}`;
 
                 break;
             case 'cerdo':
 
                 var sumarProduccion = currentAnimalSelected.producir(granja.tocino);
                 granja.tocino = sumarProduccion;
-                granjaTocino.innerHTML = `Tocino: ${parseFloat(Math.round(granja.tocino * 100) / 100).toFixed(1)}`;
+                granjaTocino.innerHTML = `Tocino: ${parseFloat(Math.round(granja.tocino))}`;
 
                 break;
             case 'pato':
 
                 var sumarProduccion = currentAnimalSelected.producir(granja.huevos);
                 granja.huevos = sumarProduccion;
-                granjaHuevos.innerHTML = `Huevos: ${parseFloat(Math.round(granja.huevos * 100) / 100).toFixed(1)}`;
+                granjaHuevos.innerHTML = `Huevos: ${parseFloat(Math.round(granja.huevos))}`;
 
                 break;
             case 'gallina':
 
                 var sumarProduccion = currentAnimalSelected.producir(granja.huevos);
                 granja.huevos = sumarProduccion;
-                granjaHuevos.innerHTML = `Huevos: ${parseFloat(Math.round(granja.huevos * 100) / 100).toFixed(1)}`;
+                granjaHuevos.innerHTML = `Huevos: ${parseFloat(Math.round(granja.huevos))}`;
 
         }
 

@@ -28,6 +28,7 @@ var Animal = (
 		Animal.prototype.beber = function () { };
 		Animal.prototype.acariciar = function () { };
 		Animal.prototype.calcularFelicidad = function () { };
+		Animal.prototype.disminuirDatos
 
 		Animal.prototype.producir = function () {
 			// console.log('Este animal no produce nada!');
